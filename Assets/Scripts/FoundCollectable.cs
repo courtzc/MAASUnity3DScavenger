@@ -33,7 +33,7 @@ public class FoundCollectable : MonoBehaviour
 
     public static void TransferCollectable ()
     {
-        Destroy(objClicked);
+        //Destroy(objClicked);
 
     }
 
