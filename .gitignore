@@ -1,2 +1,11 @@
+<<<<<<< HEAD
 Temp/
 Library/
+=======
+Library/
+Temp/
+.vs/MAASUnity3DScavenger/v15/Server/sqlite3/storage.ide-wal
+.vs/MAASUnity3DScavenger/v15/Server/sqlite3/storage.ide-shm
+.vs/MAASUnity3DScavenger/v15/Server/sqlite3/storage.ide
+.vs/MAASUnity3DScavenger/v15/Server/sqlite3/db.lock
+>>>>>>> 90167a994272f715d29623835e350f8cb927af64
