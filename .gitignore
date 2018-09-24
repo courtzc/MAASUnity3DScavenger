@@ -1,0 +1,6 @@
+Library/
+Temp/
+.vs/MAASUnity3DScavenger/v15/Server/sqlite3/storage.ide-wal
+.vs/MAASUnity3DScavenger/v15/Server/sqlite3/storage.ide-shm
+.vs/MAASUnity3DScavenger/v15/Server/sqlite3/storage.ide
+.vs/MAASUnity3DScavenger/v15/Server/sqlite3/db.lock
