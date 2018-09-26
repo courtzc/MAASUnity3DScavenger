@@ -738,6 +738,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9922c204d9e734391e2da797d28ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Slot1: {fileID: 0}
+  Slot2: {fileID: 0}
+  Slot3: {fileID: 0}
+  Slot4: {fileID: 0}
+  Slot5: {fileID: 0}
+  Slot6: {fileID: 0}
+  Slot7: {fileID: 0}
+  Slot8: {fileID: 0}
+  Slot9: {fileID: 0}
+  collectableBlocks: []
+  shadow: {fileID: 0}
+  objClicked: {fileID: 0}
 --- !u!1 &466975511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,7 +1967,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-21524
+  m_Name: pb_Mesh15484
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6604,7 +6616,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-56778
+  m_Name: pb_Mesh15524
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7328,6 +7340,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9922c204d9e734391e2da797d28ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Slot1: {fileID: 0}
+  Slot2: {fileID: 0}
+  Slot3: {fileID: 0}
+  Slot4: {fileID: 0}
+  Slot5: {fileID: 0}
+  Slot6: {fileID: 0}
+  Slot7: {fileID: 0}
+  Slot8: {fileID: 0}
+  Slot9: {fileID: 0}
+  collectableBlocks:
+  - {fileID: 21300000, guid: 9f1f80351ebea72459e126aabf2a2c84, type: 3}
+  - {fileID: 21300000, guid: e5f884a5922dc8644ac7d8d4617b1fa3, type: 3}
+  - {fileID: 21300000, guid: 6076f4fe1d2796f4085bb4ca1b6ec49e, type: 3}
+  - {fileID: 21300000, guid: a0673630afb86754aaa9aa1f346fd698, type: 3}
+  - {fileID: 21300000, guid: f802f93ce9fbba84a9a6dc750d7894bc, type: 3}
+  - {fileID: 21300000, guid: 30f94444245300946be699bbada75abd, type: 3}
+  - {fileID: 21300000, guid: c2e964f0fc6cd3143895d69481c8be19, type: 3}
+  - {fileID: 21300000, guid: 1bed064b50759434e8a9037fb1d50aa3, type: 3}
+  - {fileID: 21300000, guid: 4024262e414ef0e4a94a373739ce8372, type: 3}
+  shadow: {fileID: 21300000, guid: d6982a26fc2255c4ab0f505452e29967, type: 3}
+  objClicked: {fileID: 0}
 --- !u!4 &1351860129
 Transform:
   m_ObjectHideFlags: 0
