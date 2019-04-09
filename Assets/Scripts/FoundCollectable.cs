@@ -7,15 +7,7 @@ using System;
 
 public class FoundCollectable : MonoBehaviour
 {
-    public Image Slot1;
-    public Image Slot2;
-    public Image Slot3;
-    public Image Slot4;
-    public Image Slot5;
-    public Image Slot6;
-    public Image Slot7;
-    public Image Slot8;
-    public Image Slot9;
+    public Image[] Slots;
     public Sprite[] collectableBlocks;
     public Sprite shadow;
     public GameObject objClicked;
@@ -30,11 +22,78 @@ public class FoundCollectable : MonoBehaviour
 
     }
 
-    public static void TransferCollectable ()
+    public void TransferCollectable (int slot)
     {
-        //Destroy(objClicked);
-        //Slot1.sprite = collectableBlocks[whatever];
-            
+        Debug.Log("hello");
+        Slots[slot-1].sprite = collectableBlocks[slot-1];
+        Destroy(objClicked);
+        if (AllCollected() == 1)
+        {
+            //end game
+        }
+    }
+
+    public void CollectableOne ()
+    {
+        Debug.Log("Collected One.");
+        TransferCollectable(1);
+       
+    }
+
+    public void CollectableTwo ()
+    {
+        TransferCollectable(2);
+    }
+
+    public void CollectableThree ()
+    {
+        TransferCollectable(3);
+    }
+
+    public void CollectableFour ()
+    {
+        TransferCollectable(4);
+    }
+
+    public void CollectableFive ()
+    {
+        TransferCollectable(5);
+    }
+
+    public void CollectableSix ()
+    {
+        TransferCollectable(6);
+    }
+
+    public void CollectableSeven ()
+    {
+        TransferCollectable(7);
+    }
+
+    public void CollectableEight ()
+    {
+        TransferCollectable(8);
+    }
+
+    public void CollectableNine ()
+    {
+        TransferCollectable(9);
+    }
+
+    public int AllCollected()
+    {
+        int value = 1;
+        int i = 0;
+        while (value == 1)   
+        {
+            if (Slots[i].sprite == shadow)
+            {
+                value = 0;
+            }
+            i++;
+        }
+
+        return value;
     }
 
 }
