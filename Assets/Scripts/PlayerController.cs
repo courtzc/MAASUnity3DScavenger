@@ -1,43 +1,79 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    Vector3 pos;
-    public float speed = 2.0f;
+    public float speed = 10f;
+    public float jumpSpeed = 10f;
+    public float gravity = 10f;
+    private int count;
+    public Text countText;
+    public Text winText;
+
+    private Vector3 moveDirection = Vector3.zero;
+    private CharacterController controller;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        count = 0;
+        countText.text = "Collectables found: " + count.ToString();
+        transform.position = new Vector3(103, 6, 54);
+        controller = GetComponent<CharacterController>();
+        gameObject.transform.position = new Vector3(0, 5, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        pos = transform.position;
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        // Check if the character is on the ground
+        if (controller.isGrounded)
         {
-            pos.z += speed * Time.deltaTime;
+            // Work out which direction you'll move
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection = moveDirection * speed;
+
+            // Check if the player is jumping
+            if (Input.GetButton("Jump"))
+            {
+                moveDirection.y = jumpSpeed;
+            }
+
+            // Rotate the player to the left and right
+            transform.Rotate(0, Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
+
         }
 
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            pos.z -= speed * Time.deltaTime;
-        }
+        // Apply gravity
+        moveDirection.y = moveDirection.y - (gravity * Time.deltaTime);
 
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            pos.x -= speed * Time.deltaTime;
-        }
+        // Move the player
+        controller.Move(moveDirection * Time.deltaTime);
 
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            pos.x += speed * Time.deltaTime;
-        }
+    }
 
-        transform.position = pos;
+    void OnTriggerEnter(Collider other)
+    {
+        //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
+        if (other.gameObject.CompareTag("Collectable"))
+        {
+            Destroy(other.gameObject);
+            count += 1;
+            SetCountText();
+        }
+    }
+
+    void SetCountText()
+    {
+        countText.text = "Collectables found: " + count.ToString();
+
+        if (count >= 9)
+        {
+            winText.text = "You've won!";
+        }
     }
 }
