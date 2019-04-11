@@ -19,10 +19,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // set collectable count to 0
         count = 0;
         countText.text = "Collectables found: " + count.ToString();
+
+        // put your player at the opening of the field
         transform.position = new Vector3(103, 6, 54);
         controller = GetComponent<CharacterController>();
+        
+        // drop to ground
         gameObject.transform.position = new Vector3(0, 5, 0);
     }
 
@@ -58,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
+        // Check the provided Collider2D parameter other to see if it is tagged "Collectable"
         if (other.gameObject.CompareTag("Collectable"))
         {
             Destroy(other.gameObject);
@@ -69,8 +74,10 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText()
     {
+        // Update how many collectables are found
         countText.text = "Collectables found: " + count.ToString();
 
+        // If all collectables are found, update winText
         if (count >= 9)
         {
             winText.text = "You've won!";
